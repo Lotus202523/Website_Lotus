@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% block title %}Home | LOTUS 1st International Conference{% endblock %}
+{% block content %}
+
+<!-- Hero Section with separate background div -->
+<section id="hero" style="position:relative; height:100vh; overflow: hidden;">
+  <div class="hero-bg"></div>  <!-- Background div -->
+  <div style="position:relative; z-index: 2; height: 100%; display:flex; flex-direction:column; justify-content:center; padding-left: 60px; color:white;">
+    <span class="badge bg-primary px-4 py-2 fs-6 fw-bold" style="border-radius: 50px; max-width: max-content;">LOTUS 2025</span>
+    <h1 class="display-4 fw-bold my-4" style="line-height: 1.2; font-style: italic; max-width: 600px;">
+      1st International Conference on Tourism, Culture and Sustainability
+    </h1>
+    <div class="mb-4" style="max-width: 600px;">
+      <h4 class="mb-3 fw-normal" style="opacity: 0.8;">
+        <i class="fas fa-calendar-alt me-2"></i>July 31<sup>st</sup>, 2025
+      </h4>
+      <h4 class="mb-4 fw-normal" style="opacity: 0.8;">
+        <i class="fas fa-map-marker-alt me-2"></i>Bali Tourism Polytechnic, Indonesia
+      </h4>
+    </div>
+    <div>
+      <a href="{{ url_for('registration') }}" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold ms-3" style="border-radius: 8px; font-size: 1.1rem;">
+        Register Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Countdown Timer -->
+<div class="row mt-5 pt-4">
+  <div class="col-12 text-center">
+    <h4 class="fw-bold mb-4">Conference starts in:</h4>
+    <div class="d-flex justify-content-center gap-4 flex-wrap">
+      <div class="bg-primary text-white rounded-3 p-3 text-center" style="min-width: 80px;">
+        <div class="fs-2 fw-bold" id="days">00</div>
+        <div class="small">Days</div>
+      </div>
+      <div class="bg-primary text-white rounded-3 p-3 text-center" style="min-width: 80px;">
+        <div class="fs-2 fw-bold" id="hours">00</div>
+        <div class="small">Hours</div>
+      </div>
+      <div class="bg-primary text-white rounded-3 p-3 text-center" style="min-width: 80px;">
+        <div class="fs-2 fw-bold" id="minutes">00</div>
+        <div class="small">Minutes</div>
+      </div>
+      <div class="bg-primary text-white rounded-3 p-3 text-center" style="min-width: 80px;">
+        <div class="fs-2 fw-bold" id="seconds">00</div>
+        <div class="small">Seconds</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add this script at the end of your content block -->
+<script>
+  // Set the date we're counting down to (July 31, 2025 00:00:00)
+  const countdownDate = new Date("July 31, 2025 00:00:00").getTime();
+
+  // Update the countdown every 1 second
+  const countdownFunction = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    if (distance < 0) {
+      clearInterval(countdownFunction);
+      document.getElementById("days").innerText = "00";
+      document.getElementById("hours").innerText = "00";
+      document.getElementById("minutes").innerText = "00";
+      document.getElementById("seconds").innerText = "00";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+  }, 1000);
+</script>
+
+
+<!-- WELCOME & ABOUT -->
+<section style="background:#fff; width:100%; padding:56px 0 32px 0;">
+<div class="row justify-content-center" style="max-width:1200px;margin:auto;">
+  <div class="col-md-12 mb-4 text-justify">
+    <h4 class="fw-bold mb-3">ABOUT LOTUS 2025</h4>
+    <p style="font-size:1.15rem;">
+      Lotus marks the inaugural International Conference on Tourism, Culture, and Sustainability, organized by the undergraduate students of the Applied Bachelor Program in Tourism Destination Management at Bali Tourism Polytechnic. This pioneering initiative signifies a commitment to fostering critical dialogue and collaborative scholarship within the evolving landscape of sustainable tourism, while simultaneously cultivating leadership and organizational competencies among future tourism professionals.
+    </p>
+    <p style="font-size:1.15rem;">
+      Adopting the theme “Reimagining Wellness Destination Development: Integrating Nature, Culture, and Technology for Sustainable Destinations,” Lotus 2025 aspires to provide a dynamic platform for scholars, practitioners, policymakers, and students to exchange cutting-edge research, best practices, and innovative frameworks. The conference underscores the imperative of harmonizing environmental stewardship, cultural heritage preservation, and technological integration to advance the development of wellness destinations that are resilient, inclusive, and sustainable.
+    </p>
+    <p style="font-size:1.15rem;">
+      Lotus also convenes a distinguished lineup of experts in the fields of tourism, wellness, and sustainability, offering participants valuable insights and fresh perspectives to enrich their academic and professional pursuits. Through this initiative, Bali Tourism Polytechnic reaffirms its role as a catalyst for academic excellence and practical innovation in the tourism sector, contributing to the global discourse on sustainable development while nurturing a generation of professionals equipped to address the challenges and opportunities of the future tourism industry.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- IMPORTANT DATES -->
+<section style="background: #0a1633; width:100%; padding:48px 60px;">
+  <div style="max-width:1200px; margin:auto; color: #fff;">
+    <h4 class="fw-bold text-warning mb-5 text-center" style="letter-spacing: 2px;">IMPORTANT DATES</h4>
+    <div class="horizontal-timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">21 JULY</div>
+        <div class="timeline-desc">REGISTRATION / PAPER SUBMISSION</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">30 JULY</div>
+        <div class="timeline-desc">REGISTRATION / SUBMISSION DEADLINE</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">31 JULY</div>
+        <div class="timeline-desc">THE 1ST LOTUS CONFERENCE EVENT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEMBICARA & MODERATOR DALAM SATU GRID -->
+<section style="background: #f4f7fa; width:100%; padding:48px 0;">
+  <div class="row g-4 justify-content-center" style="max-width:1200px;margin:auto;">
+    <!-- Opening Remark 1 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-success mb-2">Opening Remark</div>
+        <img src="{{ url_for('static', filename='images/Opening Remark 1.jpg') }}" alt="Opening Remark 1" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">Dr. Drs. Ida Bagus Putu Puja, M.Kes</p>
+        <p class="mb-0 text-muted">Director Bali Tourism Polytechnic</p>
+      </div>
+    </div>
+    <!-- Opening Remark 2 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-success mb-2">Opening Remark</div>
+        <img src="{{ url_for('static', filename='images/Opening Remark 2.jpg') }}" alt="Opening Remark 2" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">Widiyanti Putri Wardhana</p>
+        <p class="mb-0 text-muted">Minister of Tourism of the Republic Indonesia</p>
+      </div>
+    </div>
+    <!-- Keynote Speaker 1 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-primary mb-2">Keynote Speaker</div>
+        <img src="{{ url_for('static', filename='images/Keynote 1.jpg') }}" alt="Keynote Speaker 1" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">Assoc. Prof. Dr. Kevser Cinar</p>
+        <p class="mb-0 text-muted">President EATSA</p>
+      </div>
+    </div>
+    <!-- Keynote Speaker 2 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-primary mb-2">Keynote Speaker</div>
+        <img src="{{ url_for('static', filename='images/Keynote 2.jpg') }}" alt="Keynote Speaker 2" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">Prof. Alexander Melbourne</p>
+        <p class="mb-0 text-muted">Chairman VICTORIA Melbourne</p>
+      </div>
+    </div>
+    <!-- Speaker 1 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-secondary mb-2">Speaker</div>
+        <img src="{{ url_for('static', filename='images/Speaker 1.jpg') }}" alt="Speaker 1" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">Ida Ayu Oka Purnama Wati, SS, MM, PhD</p>
+        <p class="mb-0 text-muted">CEO BROS Hospital</p>
+      </div>
+    </div>
+    <!-- Speaker 2 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-secondary mb-2">Speaker</div>
+        <img src="{{ url_for('static', filename='images/Speaker 2.jpg') }}" alt="Speaker 2" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">Dr. Gina O Gonong</p>
+        <p class="mb-0 text-muted">Departement of Education, Philippines</p>
+      </div>
+    </div>
+    <!-- Speaker 3 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-secondary mb-2">Speaker</div>
+        <img src="{{ url_for('static', filename='images/Speaker 3.jpg') }}" alt="Speaker 3" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">Dr. Luh Yusni Wiarti M.Par,M.Rech</p>
+        <p class="mb-0 text-muted">Senior academic and Deputy Director of Bali Tourism Polytechnic</p>
+      </div>
+    </div>
+    <!-- Speaker 4 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-secondary mb-2">Speaker</div>
+        <img src="{{ url_for('static', filename='images/Speaker 4.jpg') }}" alt="Speaker 4" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">Dr. I Gede Darmawijaya, S.Pd., M.Agb., CHE</p>
+        <p class="mb-0 text-muted">Associate Professor Bali Torism Polytechnic</p>
+      </div>
+    </div>
+    <!-- Moderator 1 -->
+    <div class="col-md-3 col-6">
+      <div class="bg-white rounded-4 shadow p-4 h-100 text-center">
+        <div class="badge bg-danger mb-2">Moderator</div>
+        <img src="{{ url_for('static', filename='images/Moderator 1.jpg') }}" alt="Moderator 1" class="speaker-img mb-2">
+        <p class="mb-1 fw-bold">I Gusti Ayu Rayinta Mahestya</p>
+        <p class="mb-0 text-muted">Student Bali Tourism Polytechnic</p>
+      </div>
+    </div>
+</section>
+  <footer class="bg-dark text-white text-center pt-4 pb-3">
+    <div class="container">
+      <!-- PARTNERSHIP TITLE -->
+      <h2 class="fw-bold mb-4" style="letter-spacing:2px; color:#fff; border-bottom:1px solid #cddc39; display:inline-block; padding-bottom:8px;">PARTNERSHIP</h2>
+      <!-- LOGO PARTNERSHIP -->
+      <div class="mb-4 d-flex flex-wrap justify-content-center gap-4">
+        <img src="{{ url_for('static', filename='images/partner1.png') }}" alt="Partner 1" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner2.jpg') }}" alt="Partner 2" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner3.jpg') }}" alt="Partner 3" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner4.jpg') }}" alt="Partner 4" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner5.jpg') }}" alt="Partner 5" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner6.png') }}" alt="Partner 6" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner7.png') }}" alt="Partner 7" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner8.png') }}" alt="Partner 8" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner9.jpg') }}" alt="Partner 9" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner10.png') }}" alt="Partner 10" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner11.png') }}" alt="Partner 11" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner12.jpg') }}" alt="Partner 12" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner13.jpg') }}" alt="Partner 13" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner14.jpg') }}" alt="Partner 14" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner15.jpg') }}" alt="Partner 15" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner16.jpg') }}" alt="Partner 16" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+        <img src="{{ url_for('static', filename='images/partner17.png') }}" alt="Partner 17" style="height:60px; background:#fff; border-radius:50%; padding:6px;">
+      </div>
+      <div>
+        <p>Email: bitp.lotus@gmail.com | Phone: +62 8788 7856 330 | Bali Tourism Polytechnic Institute</p>
+      </div>
+      <div>
+        <a href="#" class="text-white">Privacy</a> | <a href="#" class="text-white">Terms</a>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

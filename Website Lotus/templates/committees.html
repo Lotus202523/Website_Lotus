@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block title %}Committees – LOTUS Conference{% endblock %}
+{% block content %}
+
+<section class="bg-white rounded-4 shadow p-5 mb-5">
+  <h2 class="fw-bold text-success mb-4 text-center">Committees</h2>
+
+  <!-- Chairpersons -->
+  <h3 class="text-center mb-4">Chairpersons</h3>
+  <div class="row justify-content-center g-4 mb-5">
+    <div class="col-md-3 col-6 text-center">
+      <img src="{{ url_for('static', filename='images/chairperson1.png') }}" alt="Dr. Luh Yusni Wiarti" class="img-fluid rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;">
+      <p class="mb-0 fw-bold text-dark">Dr. Luh Yusni Wiarti, A.Par, SE, M.Par, M.Rech</p>
+    </div>
+    <div class="col-md-3 col-6 text-center">
+      <img src="{{ url_for('static', filename='images/chairperson2.jpg') }}" alt="Dr. Ni Made Eka Mahadewi" class="img-fluid rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;">
+      <p class="mb-0 fw-bold text-dark">Dr. Ni Made Eka Mahadewi, M.Par., CHE</p>
+    </div>
+    <div class="col-md-3 col-6 text-center">
+      <img src="{{ url_for('static', filename='images/chairperson3.jpg') }}" alt="I Gede Made Sukariyanto" class="img-fluid rounded-circle mb-2" style="width:150px; height:150px; object-fit: cover;">
+      <p class="mb-0 fw-bold text-dark">I Gede Made Sukariyanto, S.Par., M.Par.</p>
+    </div>
+  </div>
+
+   <!-- Committee Structure -->
+  <h3 class="text-center mb-4">Committee Structure</h3>
+  <div style="max-width: 900px; margin: auto;">
+
+    <ul class="list-unstyled">
+      <li class="mb-3">
+        <strong class="fs-5">Panitia Inti</strong>
+        <ul class="list-unstyled ps-3 mt-2">
+          <li>Ni Komang Yuwina Forever - Ketua</li>
+          <li>I G. A. Rayinta Mahestya - Wakil</li>
+          <li>A. A. Ayu Sri Upadewi - Sekre 1</li>
+          <li>Rivanka Alfarin Kombuno - Sekre 2</li>
+          <li>Yoshefanie Vienzensya Dinar Aldania - Bendahara 1</li>
+          <li>Janne Cassandra Amanda Harum - Bendahara 2</li>
+        </ul>
+      </li>
+
+      <li class="mb-3">
+        <strong class="fs-5">Divisi Pubdok</strong>
+        <ul class="list-unstyled ps-3 mt-2">
+          <li>I Putu Gede Naillo Ugrasena Adiba (Koor)</li>
+          <li>Luqman Risqi Hanafi (Wakoor)</li>
+          <li>Ni Putu Yuli Asterina Putri</li>
+          <li>Komang Nadya Wulan Dari</li>
+          <li>I Putu Dipa OktaBeantara Dinata</li>
+          <li>I Gede Abdi Putra Baradah</li>
+          <li>Leonardus Grenaldi Pasman</li>
+          <li>Reno Sandyka Rinaldy</li>
+          <li>Mochammad Rafi Fadhiilah</li>
+          <li>Prameswari Putri Pratiwi</li>
+          <li>Divisi Pubdok</li>
+        </ul>
+      </li>
+
+      <li class="mb-3">
+        <strong class="fs-5">Divisi Humas</strong>
+        <ul class="list-unstyled ps-3 mt-2">
+          <li>Chesilia Putri Greysanti (Koor)</li>
+          <li>Ryo Agung Wijaya (Wakoor)</li>
+          <li>Astuti Ina Awang</li>
+          <li>Maria Oktaviani Yulandari</li>
+          <li>Beta Florencia Salip</li>
+          <li>Niti Amanda Putri Sutrisno</li>
+          <li>Yona Talia Siringoringo</li>
+          <li>Egrinadhean Frilyana Avis</li>
+          <li>I Gede Agus Ardika Pratama</li>
+        </ul>
+      </li>
+
+      <li class="mb-3">
+        <strong class="fs-5">Divisi Kesekretariatan</strong>
+        <ul class="list-unstyled ps-3 mt-2">
+          <li>Koor: Feby Monica Lumban Tobing</li>
+          <li>Wakoor: Ni Putu Widya Yuliari Dewi Wirajaya</li>
+          <li>
+            <strong>Anggota</strong>
+            <ul class="list-unstyled ps-3 mt-1">
+              <li>Ni Kadek Intan Kalyana Putri</li>
+              <li>Satrio Hapinawan</li>
+              <li>Ni Komang Ayu Kusumawati</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="mb-3">
+        <strong class="fs-5">Divisi Acara</strong>
+        <ul class="list-unstyled ps-3 mt-2">
+          <li>Koor: Eginta Meliyani Br Tarigan</li>
+          <li>Wakil: Ni Kadek Sri Anggita Dewi</li>
+          <li>
+            <strong>Anggota</strong>
+            <ul class="list-unstyled ps-3 mt-1">
+              <li>Antonius Orlando</li>
+              <li>I Komang Agus Wirya Tripayana</li>
+              <li>Syalomissy Injilion Lonto</li>
+              <li>Relyva Crystabella Langoy</li>
+              <li>Albert Bagus Indradwinatha</li>
+              <li>Adelayda Bianca Cenique</li>
+              <li>Melani Septi Nyarong</li>
+              <li>Nazwa Terrisa Dewi Suherlan</li>
+              <li>I Dewa Anom Mahendra</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="mb-3">
+        <strong class="fs-5">Divisi Logistik & Venue</strong>
+        <ul class="list-unstyled ps-3 mt-2">
+          <li>Koor: I Wayan Farisky Putra Dharmana</li>
+          <li>Wakoor: Ida Ayu Putu Risma Widnyani</li>
+          <li>
+            <strong>Anggota</strong>
+            <ul class="list-unstyled ps-3 mt-1">
+              <li>I Putu Gede Surya Sanjaya</li>
+              <li>I Kadek Mahendra</li>
+              <li>Ni Made Chintya Aprilian Putri</li>
+              <li>Felisitas Sartika</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="mb-3">
+        <strong class="fs-5">Divisi Partnership</strong>
+        <ul class="list-unstyled ps-3 mt-2">
+          <li>Koor: Carmelita Laetitia Da Costa</li>
+          <li>Wakoor: Ni Kadek Ari Darmayanti</li>
+          <li>
+            <strong>Anggota</strong>
+            <ul class="list-unstyled ps-3 mt-1">
+              <li>Ni Wayan Monica Nadyana Putri</li>
+              <li>I Putu Dika Indra Airlangga</li>
+              <li>Rangga Putra Abu Bakrin</li>
+              <li>Keane Everlie</li>
+              <li>Nanda Aprilia Sihotang</li>
+              <li>I Dewa Anom Mahendra</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+
+{% endblock %}
